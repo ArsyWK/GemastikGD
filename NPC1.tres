@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="DQCharacter" load_steps=2 format=3]
+
+[ext_resource type="Script" path="res://addons/dialogue_quest/scripts/systems/character/resources/character.gd" id="npc_udin"]
+
+[resource]
+script = ExtResource("npc_udin")
+color = Color(0, 0, 0, 1)
+character_id = "NPC1"
+character_name = "Udin"
