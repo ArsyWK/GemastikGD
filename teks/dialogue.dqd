@@ -1,0 +1,26 @@
+say | player | Halo bang
+say | NPC1 | Halo juga bang
+say | udin sedang makan sate
+
+choice|sate|bakso|seblak
+branch|choice|sate
+say|Kamu makan sate bareng udin
+say|player|satenya enak juga ya
+exit|
+branch|end
+
+branch|choice|bakso
+say|kamu lebih memilih bakso
+
+choice|kecap|sambal
+branch|choice|kecap
+say|kamu mengambil kecap
+branch|end
+
+branch|choice|sambal
+say|kamu mengambil sambal
+say|player|hmmm... |sambal ini sepertinya enak
+branch|end
+
+branch|choice|seblak
+say|seblak yang merah merona

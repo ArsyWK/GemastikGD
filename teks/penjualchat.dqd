@@ -1,0 +1,39 @@
+say|NPC1|Oh selamat datang ${player}, mau pesan apa hari ini?
+
+choice|talk|buy|bye
+
+branch|choice|talk
+say|NPC1|Akhir akhir ini sering terjadi hujan ya. |Terus karena sering hujan jadi banyak sekali serangga berkeliaran didepan halaman dan banyak tanaman kena imbas nya. |Gimana ya cara ngusir para serangganya biar enggak pada balik lagi?
+
+choice|buang tanaman|masukan tanaman|beri semprotan serangga
+
+branch|choice|buang tanaman
+say|player|Kenapa kamu tidak buang saja tanaman yang sudah terkena? Itu hanya akan membuat tanaman lain semakin buruk
+say|NPC1|Tapi sayang kalau tanamannya dibuang, aku sudah merewat nya dengan sepenuh hati ku. |Jika ku buang rasanya usaha ku selama ini sia sia
+flag|dec|${npc_trust}
+//perlu bikin dulu var npc_trust
+branch|end
+
+branch|choice|masukan tanaman
+say|player|Menurutku sebaiknya kamu masukkan saja tanaman mu ke dalam rumah kaca setiap kali kamu mau tutup toko
+say|NPC1|Benar juga ya, aku bisa ku masukkan tiap kali aku mau tutup toko. Makasih atas sarannya
+branch|end
+
+branch|choice|beri semprotan serangga
+say|player|Ini aku ada semprotan, aku buat ini di rumah ku menggunakan bahan-bahan sisa makanan, ini ampuh untuk mengusir para serangga
+say|NPC1|Eh!? Serius buat aku? padahal kamu enggak perlu repot repot buat ngasih aku lho, makasih banyak banget
+flag|inc|${npc_trust}
+//perlu bikin dulu var npc_trust
+flag|dec|${item_id.quantity}
+//perlu bikin dulu var item_id  
+branch|end
+
+branch|choice|buy
+say|NPC1|Silahkan mau beli apa
+//open shop dibuka pake gdscript
+branch|end
+
+branch|choice|bye
+say|NPC1|Sampai nanti
+branch|end
+
